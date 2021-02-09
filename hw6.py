@@ -80,10 +80,13 @@ result = []
 s_str_1 = set(str_1)
 s_str_2 = set(str_2)
 
-for symbol_1 in s_str_1:
-    for symbol_2 in s_str_2:
-        if symbol_1 == symbol_2:
-            result.append(symbol_1)
+# for symbol_1 in s_str_1:
+#     for symbol_2 in s_str_2:
+#         if symbol_1 == symbol_2:
+#             result.append(symbol_1)
+
+for symbol in s_str_1.intersection(s_str_2):
+    result.append(symbol)
 
 print(result)
 
@@ -99,12 +102,16 @@ result = []
 s_str_1 = set(str_1)
 s_str_2 = set(str_2)
 
-for symbol_1 in s_str_1:
-    if str_1.count(symbol_1) == 1:
-        for symbol_2 in s_str_2:
-            if str_2.count(symbol_2) == 1:
-                if symbol_1 == symbol_2:
-                    result.append(symbol_1)
+# for symbol_1 in s_str_1:
+#     if str_1.count(symbol_1) == 1:
+#         for symbol_2 in s_str_2:
+#             if str_2.count(symbol_2) == 1:
+#                 if symbol_1 == symbol_2:
+#                     result.append(symbol_1)
+
+for symbol in s_str_1.intersection(s_str_2):
+    if str_1.count(symbol) == 1 and str_2.count(symbol) == 1:
+        result.append(symbol)
 
 print(result)
 
